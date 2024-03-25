@@ -16,7 +16,11 @@ jobs:
             owner: context.repo.owner,
             repo: context.repo.repo
           });
+          console.log(labels.data);  // Add this line to print the labels data
           return labels.data;
+
+    - name: Print labels
+      run: echo "${{ steps.get-labels.outputs.labels }}"
 
     - name: Delete labels
       if: ${{ steps.get-labels.outputs.labels.length > 0 }}
