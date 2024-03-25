@@ -21,3 +21,15 @@ jobs:
       - name: Print labels
         run: |
           echo "${{steps.get-labels.outputs.result}}"
+
+      - name: Delete labels
+        if: ${{ steps.get-labels.outputs.result.length > 0 }}
+        run: |
+          const labels = ${{ toJSON(steps.get-labels.outputs.labels) }};
+          for (const label of labels) {
+            await github.rest.issues.deleteLabel({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              name: label.name
+            });
+          }
