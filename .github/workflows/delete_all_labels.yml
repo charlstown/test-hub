@@ -4,7 +4,7 @@ on: workflow_dispatch
 jobs:
   delete-labels:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 2
     permissions:
       issues: write
     steps:
@@ -29,9 +29,5 @@ jobs:
         run: |
           const labels = ${{steps.get-labels.outputs.result}};
           for (const label of labels) {
-            await github.rest.issues.deleteLabel({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              name: label.name
-            });
+            echo label.name
           }
