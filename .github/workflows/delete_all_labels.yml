@@ -19,8 +19,7 @@ jobs:
             repo: context.repo.repo
           });
           console.log(labels.data);  // Add this line to print the labels data
-          echo "LABELS=labels.data" >> $GITHUB_ENV
         
     - name: Print labels
       run:
-        echo $LABELS
+        echo ${{ steps.get-labels.outputs.labels }}.data
