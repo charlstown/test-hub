@@ -20,4 +20,4 @@ jobs:
         
       - name: Print labels
         run: |
-          echo "${{steps.set-result.outputs.result}}"
+          echo "${{steps.get-labels.outputs.result}}"
