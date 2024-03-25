@@ -21,5 +21,7 @@ jobs:
           console.log(labels.data);  // Add this line to print the labels data
         
     - name: Print labels
-      run:
-        echo ${{ steps.get-labels.outputs.labels }}
+      run: |
+          for label in ${{ steps.get-labels.outputs.labels }}; do
+            echo $label
+          done
