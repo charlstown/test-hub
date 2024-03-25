@@ -17,11 +17,8 @@ jobs:
               repo: context.repo.repo
             });
             console.log(JSON.stringify(labels.data)); // Print labels data to the console
-            return { labels: labels.data }; // Return the labels data
+            console.log(`::set-output name=labels::${JSON.stringify(labels.data)}`); // Set labels as output
         
       - name: Print labels
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const labels = JSON.parse('${{ steps.get-labels.outputs.labels }}');
-            console.log(labels);
+        run: |
+          echo "${{ steps.get-labels.outputs.labels }}"
