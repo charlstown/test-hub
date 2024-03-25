@@ -21,7 +21,7 @@ jobs:
           console.log(labels.data);  // Add this line to print the labels data
         
     - name: Print labels
-    uses: actions/github-script@v7
-    with:
-      script: |
-        console.log(labels.data);
+      uses: actions/github-script@v7
+      with:
+        script: |
+          console.log(labels.data);
