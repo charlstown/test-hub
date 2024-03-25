@@ -26,8 +26,9 @@ jobs:
 
       - name: Delete labels
         if: ${{steps.get-labels.outputs.result.length}} > 0
-        run: |
-          const labels = ${{steps.get-labels.outputs.result}};
-          for (const label of labels) {
-            echo label.name
-          }
+        with:
+          script: |
+            const labels = ${{steps.get-labels.outputs.result}};
+            for (const label of labels) {
+              console.log(label.name);
+            }
