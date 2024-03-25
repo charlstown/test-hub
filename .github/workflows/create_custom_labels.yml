@@ -2,7 +2,7 @@ name: Create custom labels
 on: workflow_dispatch
 
 jobs:
-  comment:
+  create-labels:
     runs-on: ubuntu-latest
     steps:
       - run: |
@@ -32,3 +32,4 @@ jobs:
             --color B60205
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
