@@ -4,6 +4,7 @@ on: workflow_dispatch
 jobs:
   delete-labels:
     runs-on: ubuntu-latest
+    timeout-minutes: 90
     permissions:
       issues: write
     steps:
