@@ -24,7 +24,7 @@ jobs:
           echo "${{steps.get-labels.outputs.result.length}}"
 
       - name: Delete labels
-        if: ${{ steps.get-labels.outputs.result.length > 0 }}
+        if: ${{steps.get-labels.outputs.result.length}} > 0
         run: |
           const labels = ${{ toJSON(steps.get-labels.outputs.labels) }};
           for (const label of labels) {
