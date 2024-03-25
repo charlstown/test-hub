@@ -20,7 +20,7 @@ jobs:
           return labels.data;
 
     - name: Print labels
-      run: echo "${{ steps.get-labels.outputs.labels }}"
+      run: echo "${{ steps.get-labels.outputs.labels.data }}"
 
     - name: Delete labels
       if: ${{ steps.get-labels.outputs.labels.length > 0 }}
