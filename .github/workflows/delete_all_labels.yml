@@ -26,7 +26,7 @@ jobs:
       - name: Delete labels
         if: ${{steps.get-labels.outputs.result.length}} > 0
         run: |
-          const labels = ${{ toJSON(steps.get-labels.outputs.labels) }};
+          const labels = ${{steps.get-labels.outputs.result}};
           for (const label of labels) {
             await github.rest.issues.deleteLabel({
               owner: context.repo.owner,
