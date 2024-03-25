@@ -2,8 +2,7 @@ name: Request resource
 description: Request new resources like repositories, jira boards, new branches, etc.
 title: "[Resource]: TYPE TITLE HERE"
 labels: ["[type] resource"]
-assignees:
-  - n963309-sgt_sangroup
+
 body:
 
   # Data component type
@@ -12,11 +11,9 @@ body:
     attributes:
       label: Which tool is the issue related with?
       options:
-        - Jira
-        - Github
-        - Sandbox cloud environments
-        - DEV cloud environments
-        - Gluon
+        - Tool 1
+        - Tool 2
+        - Tool 3
         - Others
     validations:
       required: true
@@ -33,12 +30,6 @@ body:
         - Low
     validations:
       required: true
-
-  # Repository reminder
-  - type: markdown
-    attributes:
-      value: |
-        *If the resource is a repository make sure to describe the base technology used to fit the right component template from Gluon.*
 
   # Goal description
   - type: textarea

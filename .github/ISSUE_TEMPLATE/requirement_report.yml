@@ -2,20 +2,18 @@ name: Add requirement
 description: Add new requirements to our Data Platform Components as an external stakeholder.
 title: "[Requirement]: TYPE TITLE HERE"
 labels: ["[type] requirement"]
-assignees:
-  - n963309-sgt_sangroup
+
 body:
 
-  # Data component type
+  # Workstream
   - type: dropdown
     id: data-component
     attributes:
-      label: Under which component would you like to open the new requirement?
+      label: Under which workstream would you like to open the new requirement?
       options:
-        - Ingestion
-        - Orchestration
-        - MLOPS
-        - Data Terms Dictionary
+        - Workstream 1
+        - Workstream 2
+        - Workstream 3
         - Other
     validations:
       required: true
@@ -25,7 +23,7 @@ body:
     id: company
     attributes:
       label: Please, indicate your company
-      placeholder: Santander Spain
+      placeholder: Amazon, Google, etc.
     validations:
       required: true
 

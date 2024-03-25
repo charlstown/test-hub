@@ -11,13 +11,10 @@ body:
     attributes:
       label: Which tool is the issue related with?
       options:
-        - Jira
-        - Github
-        - Confluence
-        - Sandbox cloud environments
-        - DEV cloud environments
-        - Gluon
-        - Others
+        - Tool 1
+        - Tool 2
+        - Tool 3
+        - Other
     validations:
       required: true
 
@@ -40,6 +37,6 @@ body:
     attributes:
       label: Description
       description: Please describe as precisely as possible what's the incident. Please attach useful screenshots, even from Browser console if it applies.
-      placeholder: I not able to access to Jira from...
+      placeholder: I not able to access to _____ from ____
     validations:
       required: true
