@@ -1,6 +1,6 @@
 # Test Hub
 
-[![GDP](https://img.shields.io/badge/Project-test_hub-red.svg?style=flat&logoColor=green)](LICENSE)
+[![GDP](https://img.shields.io/badge/Project-Test_Hub-red.svg?style=flat&logoColor=green)](LICENSE)
 
 This repository acts as a central hub to submit requirements, feature requests and troubleshooting for our stakeholders.
 
