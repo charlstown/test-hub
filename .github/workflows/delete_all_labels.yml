@@ -16,9 +16,8 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo
             });
-            console.log(JSON.stringify(labels.data)); // Print labels data to the console
-            console.log(`::set-output name=labels::${JSON.stringify(labels.data)}`); // Set labels as output
+            return labels.data
         
       - name: Print labels
         run: |
-          echo "${{ steps.get-labels.outputs.labels }}"
+          echo "${{steps.set-result.outputs.result}}"
