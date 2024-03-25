@@ -34,6 +34,6 @@ jobs:
               github.rest.issues.deleteLabel({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                name: label
+                name: label.name
               })
             }
