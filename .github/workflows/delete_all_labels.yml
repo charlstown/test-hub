@@ -9,19 +9,20 @@ jobs:
     outputs:
       labels: ${{ steps.get-labels.outputs.labels }}
     steps:
-    - name: Get current labels
-      id: get-labels
-      uses: actions/github-script@v7
-      with:
-        script: |
-          const labels = await github.rest.issues.listLabelsForRepo({
-            owner: context.repo.owner,
-            repo: context.repo.repo
-          });
-          console.log(labels.data);  // Add this line to print the labels data
+      - name: Get current labels
+        id: get-labels
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const labels = await github.rest.issues.listLabelsForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo
+            });
+            return { labels: labels.data }; // Return the labels data
         
-    - name: Print labels
-      uses: actions/github-script@v7
-      with:
-        script: |
-          console.log('${{ steps.get-labels.outputs.labels }}');
+      - name: Print labels
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const labels = context.outputs.labels;
+            console.log(labels);
